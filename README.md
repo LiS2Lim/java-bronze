@@ -1,11 +1,12 @@
 # java-bronze
 Records of study for Java bronze certification
 
-Class Book {
+<pre>
+class Book {
   String BookTitle = "すっきりわかるJava入門";
   
   public String Study(Integer chapterNo) {
-    return chapterNo + "の練習問題を解いてGithubに更新しました"
+    return chapterNo + "の練習問題を解いてGithubに更新しました";
   }
 }
 
@@ -29,3 +30,4 @@ enum ChapterList {
   Chapter17_例外,
   Chapter18_まだまだ広がるJavaの世界
 }
+</pre>
