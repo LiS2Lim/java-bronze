@@ -1,4 +1,4 @@
-package Chapter7;
+package Chapter8;
 
 public class Cleric {
     private String name;
