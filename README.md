@@ -5,7 +5,7 @@ Records of study for Java bronze certification
 class Book {
   String BookTitle = "すっきりわかるJava入門";
   
-  public String Study(Integer chapterNo) {
+  public String Study.Study(Integer chapterNo) {
     return chapterNo + "の練習問題を解いてGithubに更新しました";
   }
 }
