@@ -3,6 +3,7 @@ package Study;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Study {
 
@@ -211,7 +212,31 @@ class ArrayTest {
     }
 }
 
-
+class OutOfMemoryTest {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        try {
+            while (true) {
+                list.add("hello");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getClass().getName());
+            System.out.println("it is RuntimeException / 非検査例外 / 検査しなくてもコンパイルできる");
+        } catch (Exception e) {
+            System.out.println(e.getClass().getName());
+            System.out.println("it is Exception without RuntimeException / 検査例外 / 検査しないとコンパイルできない");
+            /*
+            IOException
+            SQLException
+            InterruptedException
+            ClassNotFoundException
+             */
+        } catch (Error e) {
+            System.out.println(e.getClass().getName());
+            System.out.println("it is Error / エラー / 発生してもどうしようもないもの");
+        }
+    }
+}
 
 
 
