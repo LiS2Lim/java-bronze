@@ -2,6 +2,7 @@ package Study;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
+import java.util.ArrayList;
 
 public class Study {
 
@@ -161,7 +162,54 @@ class sutdy_static {
    ElementType e();
 }
 
+/*
+配列の場合、newで宣言されると初期化されるので、値が入っていなくても動作する。
+ArrayListなどはout of bouns Exceptionが発生する (Sizeが0なので)
+ */
+class InitArray {
+    public static void main(String[] args) {
+        String[] strs = new String[3];
+        System.out.println(strs[0]);
 
+        ArrayList<String> list = new ArrayList<>();
+        System.out.println(list.size());
+        System.out.println(list.get(0));
+    }
+}
+
+class checkForTypeOfException {
+    public static void main(String[] args) {
+        String[] array = {"asdfa", "asd", "brw"};
+        String[] array2 = new String[3];
+        int i = 0;
+        try {
+            for (String s : array) {
+                array2[i] = s.substring(1, 4);
+                i++;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getClass().toString());
+        }
+    }
+}
+
+/*
+For文の動き方確認
+ */
+class ArrayTest {
+    public static void main(String[] args) {
+        int[] list = {1, 2, 3, 4, 5};
+        for (int i = 0; i < list.length; i++) {
+            System.out.println(list[i]);
+        }
+        for (int i = list.length-1; i >= 0; i--) {
+            System.out.println(list[i]);
+        }
+        for (int i = 0; i < list.length; i+=2) {
+            System.out.println(list[i]);
+        }
+    }
+}
 
 
 
