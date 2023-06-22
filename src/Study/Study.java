@@ -1,5 +1,8 @@
 package Study;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
 public class Study {
 
     class Inner extends Study{
@@ -132,12 +135,31 @@ class Intermain implements Inters {
     }
 }
 
+//static methodからはstatic methodのみ呼び込み可能
+class sutdy_static {
+    public static void main(String[] args) {
+        stater();
+    }
+
+    static void stater() {
+        System.out.println("stater");
+    }
+
+    void call() {
+        System.out.println("call");
+    }
+
+    @testing(e = ElementType.METHOD)
+    public void next() {
+        call();
+    }
+}
 
 
-
-
-
-
+@Target(ElementType.METHOD)
+@interface testing {
+   ElementType e();
+}
 
 
 
